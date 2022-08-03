@@ -1,0 +1,30 @@
+package com.dunn.womba.scripts;
+import org.testng.annotations.Test;
+
+import com.dunn.womba.lib.Baselib;
+import com.dunn.womba.lib.excelLib;
+
+import com.dunn.womba.init.Iconstants;
+
+import com.dunn.womba.pages.LoginPage;
+import com.dunn.womba.pages.Patientinsurance;
+
+
+
+public class patientinsurance1  extends Baselib{ 
+	
+  @Test
+	               public void patientinsurance11() throws InterruptedException
+	               {
+	             LoginPage lp = new LoginPage(driver);
+	       		String un = excelLib.getData("Sheet2",2,1,Iconstants.DataexcelPath);
+	    		String pw = excelLib.getData("Sheet2",2,2,Iconstants.DataexcelPath);
+	    		lp.doLogin(un, pw);
+	                              
+	                              
+	                              Patientinsurance obj=new Patientinsurance(driver);
+	                        		
+	                        	    obj.insurance();  //calling method here//
+	}
+	}
+
