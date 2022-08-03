@@ -7,9 +7,9 @@ on:
     branches: [ "master" ]
  
 jobs:
-  build:
+  build-on-windows:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: Step 1 - Checkout main branch from GitHub
@@ -20,9 +20,6 @@ jobs:
         java-version: '11'
     - name: Have GitHub Actions Build Maven Project
       run: mvn -B package --file pom.xml
-    - name: Step 4 - List the current directory
-      run: ls -a
-    - name: Step 5 - What is in the target folder?
-      run: |
-       cd  target
-       ls -a
+    - name: Step 4 - List the environment variables
+      run: env
+ 
