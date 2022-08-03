@@ -5,6 +5,8 @@ name: GitHub Actions Maven Build Example
 on:
   push:
     branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
  
 jobs:
   build-on-windows:
